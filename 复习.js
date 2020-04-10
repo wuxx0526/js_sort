@@ -1,21 +1,16 @@
 const arr = [1, 33, 4, 22, 5, 19]
 
-
 !function main () {
     const len = arr.length
-    let preIndex, current
-    for (let i = 1; i < len; i++) {
-        preIndex = i - 1
-        current = arr[i]
-        i === 4 && console.log(arr)
-        while (preIndex > 0 && arr[preIndex] > current) {
-            arr[preIndex + 1] = arr[preIndex]
-            --preIndex
-            i === 4 && console.log(arr)
+    for (let i = 0; i < len; i++) {
+        let minIndex = i
+        for (let j = i; j < len; j++ ) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j
+            }
         }
-        arr[preIndex + 1] = current
+        [arr[minIndex], arr[i]] = [arr[i], arr[minIndex]]
     }
-
 }()
 
 console.log(arr)
