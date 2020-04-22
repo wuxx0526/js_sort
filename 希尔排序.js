@@ -9,7 +9,6 @@ const arr = [55,26,33,80,70,90,6,30,40,20]
             let j = i;
             let current = arr[i];
             while(j - gap >= 0 && current < arr[j - gap]) {
-                gap = 2 && console.log(arr)
                 arr[j] = arr[j - gap];
                 j = j - gap;
             }
